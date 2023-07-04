@@ -80,65 +80,27 @@ This is a preparation step. Load data from [https://archive.ics.uci.edu/ml/datas
 python src/pipelines/load_data.py              
 ```
 
-## :tv: Pipelines and Monitoring dashboards
+## :tv: Monitoring Examples
 
 
-### 1 - Generate predictions
+### 1 - Data Drift 
 
 
-We prepared a script to generate predictions for the model. The scripts simulate a requests to the model and save predictions to PostgreSQL database.
-
-```bash 
-python src/scripts/simulate.py > simulation.log 2>&1
-```
-
-**Note**:
-- `> simulation.log` means that all simulation script logs will be wrote in the file `simulation.log`
-- `2>&1` means that ***all*** logs (including errors and non-stdout logs) will be redirect to `simulation.log`
 
 ### 2 - Monitoring reports
 
-To generate and view monitoring reports open following endpoints:
-- *model performance*: http://0.0.0.0:5000/monitor-model
-- *target drift*: http://0.0.0.0:5000/monitor-target
 
-<details><summary>Notes</summary>
-
-- you can build report on different size of prediction data using parameter *`window_size`*, for instance:
-    - http://0.0.0.0:5000/monitor-model?window_size=300
-    - http://0.0.0.0:5000/monitor-target?window_size=100
-- default value of *`window_size`* is *3000*
-
-</details>
-
-### 3 - Preview monitoring reports via Streamlit UI (optional)
-
-Streamlit application implements convenient interface to build and render monitoring reports.
-
-To render report:
-- open [Streamlit application](http://localhost:8501)
-- input required window size (options; 3000 by default)
-- click on of two buttons (***Model performance*** or ***Target drift***) and wait report rendering
+### 3 - 
 
 
-## :checkered_flag: Stop cluster
+
+
+## :checkered_flag: View experiments and monitoring reports in MLflow UI
 
 ```bash
-docker compose down
+mlflow ui
 ```
-
-<details>
-<summary>Notes</summary>
-
-- To clear cluster one needs to remove `Docker` volume containing monitoring (`Postgres`) database
-- It may be useful to run this tutorial from scratch
-- Run the command:
-  
-```bash
-docker compose down -v
-```
-
-</details>
+And then navigate to [http://localhost:5000](http://localhost:5000) in your browser
 
 
 ## Acknowledgments

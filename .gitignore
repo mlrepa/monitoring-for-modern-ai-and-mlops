@@ -10,6 +10,7 @@ src/pipelines/*
 
 # MLFlow 
 mlruns/*
+mlartifacts/*
 
 
 # Byte-compiled / optimized / DLL files
