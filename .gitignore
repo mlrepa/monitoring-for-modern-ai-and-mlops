@@ -6,7 +6,6 @@ reports/*
 prefect/*
 dev/
 .python-version
-src/pipelines/*
 
 # MLFlow 
 mlruns/*
