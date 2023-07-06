@@ -115,3 +115,37 @@ def get_test_status(report) -> Dict:
             return FAIL
 
     return SUCCESS
+
+
+def build_model_monitoring_report(
+    reference_data: pd.DataFrame,
+    current_data: pd.DataFrame,
+    column_mapping: ColumnMapping
+) -> Any:
+
+    model_report = Report(metrics=[
+        RegressionQualityMetric(),
+        RegressionErrorPlot(),
+        RegressionErrorDistribution()
+    ])
+    model_report.run(
+        reference_data=reference_data,
+        current_data=current_data,
+        column_mapping=column_mapping
+    )
+    
+    return model_report
+
+def get_model_monitoring_metrics(
+    regression_quality_report: Report
+) -> Dict:
+
+    metrics = {} 
+    report_dict = regression_quality_report.as_dict()
+    
+    metrics['me'] = report_dict['metrics'][0]['result']['current']['mean_error']
+    metrics['mae'] = report_dict['metrics'][0]['result']['current']["mean_abs_error"]
+    metrics['rmse'] = report_dict['metrics'][0]['result']['current']["rmse"]
+    metrics['mape'] = report_dict['metrics'][0]['result']['current']["mean_abs_perc_error"]
+    
+    return metrics
