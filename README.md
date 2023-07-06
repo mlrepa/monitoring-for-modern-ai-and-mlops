@@ -82,15 +82,17 @@ python src/pipelines/load_data.py
 
 ## :tv: Monitoring Examples
 
+Sure, here is the markdown table with an added description column:
 
-### 1 - Data Drift 
+Sure, here's how you can add links to your markdown table:
 
-
-
-### 2 - Monitoring reports
-
-
-### 3 - 
+| No. | Monitoring Example | Description |
+|---|---|---|
+| 1. | [train-model.ipynb](notebooks/train-model.ipynb) | Get started with Metrics Tracking for ML Experiments |
+| 2. | [train-model-kfold.ipynb](notebooks/train-model-kfold.ipynb) | Production model training with K-Folds cross-validation |
+| 3. | [data-drift.ipynb](notebooks/data-drift.ipynb) | Evaluate Data Drift for train/test datasets |
+| 4. | [test-model.ipynb](notebooks/test-model.ipynb) | Test Suites and Reports for Model Training |
+| 5. | [monitor_model.ipynb](notebooks/monitor_model.ipynb) | Model Monitoring with Evidently and MLFlow |
 
 
 
@@ -105,6 +107,6 @@ And then navigate to [http://localhost:5000](http://localhost:5000) in your brow
 
 ## Acknowledgments
 
-The dataset used in the example is from: https://www.kaggle.com/c/bike-sharing-demand/data?select=train.csv
-Fanaee-T, Hadi, and Gama, Joao, 'Event labeling combining ensemble detectors and background knowledge', Progress in Artificial Intelligence (2013): pp. 1-15, Springer Berlin Heidelberg
-More information about the dataset can be found in UCI machine learning repository: https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset
+The dataset used in the example is downloaded from: https://www.kaggle.com/c/bike-sharing-demand/data?select=train.csv
+- Fanaee-T, Hadi, and Gama, Joao, 'Event labeling combining ensemble detectors and background knowledge', Progress in Artificial Intelligence (2013): pp. 1-15, Springer Berlin Heidelberg
+- More information about the dataset can be found in UCI machine learning repository: https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset
