@@ -2,7 +2,7 @@ import os
 from typing import Dict, Text
 
 # Data 
-DATA_DIR = "data/raw"
+DATA_DIR = "data"
 FILENAME = "raw_data.csv"
 
 # MLFlow
