@@ -101,7 +101,7 @@ Sure, here's how you can add links to your markdown table:
 
 ```bash
 mlflow ui
-```
+``` 
 And then navigate to [http://localhost:5000](http://localhost:5000) in your browser
 
 
