@@ -54,7 +54,7 @@ python3 -m venv .venv
 echo "export PYTHONPATH=$PWD" >> .venv/bin/activate
 source .venv/bin/activate
 pip install --upgrade pip setuptools wheel
-pip install -r requirements-dev.txt
+pip install -r requirements.txt
 ```
 
 
@@ -82,17 +82,13 @@ python src/pipelines/load_data.py
 
 ## :tv: Monitoring Examples
 
-Sure, here is the markdown table with an added description column:
-
-Sure, here's how you can add links to your markdown table:
-
 | No. | Monitoring Example | Description |
 |---|---|---|
-| 1. | [train-model.ipynb](notebooks/train-model.ipynb) | Get started with Metrics Tracking for ML Experiments |
-| 2. | [train-model-kfold.ipynb](notebooks/train-model-kfold.ipynb) | Production model training with K-Folds cross-validation |
-| 3. | [data-drift.ipynb](notebooks/data-drift.ipynb) | Evaluate Data Drift for train/test datasets |
-| 4. | [test-model.ipynb](notebooks/test-model.ipynb) | Test Suites and Reports for Model Training |
-| 5. | [monitor_model.ipynb](notebooks/monitor_model.ipynb) | Model Monitoring with Evidently and MLFlow |
+| 1. | **train-model.ipynb** | Get started with Metrics Tracking for ML Experiments |
+| 2. | **train-model-kfold.ipynb** | Production model training with K-Folds cross-validation |
+| 3. | **data-drift.ipynb**| Evaluate Data Drift for train/test datasets |
+| 4. | **test-model.ipynb** | Test Suites and Reports for Model Training |
+| 5. | **monitor-model.ipynb**| Model Monitoring with Evidently and MLFlow |
 
 
 
