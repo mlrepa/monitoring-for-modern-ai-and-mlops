@@ -1,10 +1,8 @@
-evidently==0.4.1
+evidently==0.4.10
 ipykernel
 joblib==1.2.0
 jupyter==1.0.0
-jupyter_contrib_nbextensions==0.7.0
-joblib
-mlflow==2.4.2
+mlflow==2.6.0
 pandas==1.5.3
 pendulum==2.1.2
 plotly

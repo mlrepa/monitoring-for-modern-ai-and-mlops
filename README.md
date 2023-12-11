@@ -62,7 +62,7 @@ pip install -r requirements.txt
 This is a preparation step. Load data from [https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset](https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset) to the `data/` directory
 
 ```bash 
-python src/pipelines/load_data.py              
+python src/load_data.py              
 ```
 
 ## :tv: Monitoring Examples
