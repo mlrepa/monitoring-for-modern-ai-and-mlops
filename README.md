@@ -2,36 +2,8 @@
 
 This example shows steps to integrate Evidently and [MLFlow](https://mlflow.org/) into your ML prototypes and production pipelines.
 
-![Evidently.ai + MLFlow](static/banner.png "Dashboard preview")
+<!-- ![Evidently.ai + MLFlow](static/banner.png "Dashboard preview") -->
 
---------
-Project Organization
-------------
-
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── config             <- Configs directory
-    ├── data
-    │   ├── features       <- Features for model training and inference.
-    │   ├── raw            <- The original, immutable data dump.
-    │   └── reference      <- Reference datasets for monitoring.
-    ├── fastapi            <- FastAPI application
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    ├── reports             <- Monitoring report files
-    │
-    ├── src                <- Source code for use in this project.
-    │   ├── monitoring     <- Common code for monitoring 
-    │   │
-    │   ├── pipelines      <- Source code for all pipelines
-    │   │
-    │   ├── scripts        <- Helper scripts
-    │   │
-    │   ├── utils          <- Utility functions and classes 
-    ├── static             <- Assets for docs 
-    └── streamlit_app      <- Streamlit application
-     
-
-
---------
 
 ## :woman_technologist: Installation
 

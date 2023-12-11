@@ -6,6 +6,7 @@ reports/*
 prefect/*
 .dev
 .python-version
+*.parquet
 
 # MLFlow 
 mlruns/*
