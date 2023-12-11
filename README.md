@@ -1,8 +1,4 @@
-# Enhanced Machine Learning Model Monitoring with MLFlow and Evidently AI
-
-This example shows steps to integrate Evidently and [MLFlow](https://mlflow.org/) into your ML prototypes and production pipelines.
-
-<!-- ![Evidently.ai + MLFlow](static/banner.png "Dashboard preview") -->
+# Get Started with ML Monitoring
 
 
 ## :woman_technologist: Installation
@@ -12,8 +8,8 @@ This example shows steps to integrate Evidently and [MLFlow](https://mlflow.org/
 Get the tutorial example code:
 
 ```bash
-git clone git@github.com:evidentlyai/evidently.git
-cd evidently/examples/integrations/mlflow_integration
+git clone https://gitlab.com/risomaschool/tutorials-raif/monitoring-1-get-started.git
+cd monitoring-1-get-started
 ```
 
 
@@ -41,13 +37,10 @@ python src/load_data.py
 
 | No. | Monitoring Example | Description |
 |---|---|---|
-| 1. | **train-model.ipynb** | Get started with Metrics Tracking for ML Experiments |
-| 2. | **train-model-kfold.ipynb** | Production model training with K-Folds cross-validation |
-| 3. | **data-drift.ipynb**| Evaluate Data Drift for train/test datasets |
-| 4. | **test-model.ipynb** | Test Suites and Reports for Model Training |
-| 5. | **monitor-model.ipynb**| Model Monitoring with Evidently and MLFlow |
-
-
+| 1. | **1-getting-started-tutorial.ipynb** | Get started with Evidently Monitoring |
+| 2. | **2-monitor-model.ipynb**| Model Monitoring with Evidently and MLFlow |
+| 3. | **3-data-drift.ipynb**| Evaluate Data Drift for train/test datasets with Evidently and MLFlow |
+| 4. | **4-great-expectatinos.ipynb** | Tutorial for Great Expectations |
 
 
 ## :checkered_flag: View experiments and monitoring reports in MLflow UI
