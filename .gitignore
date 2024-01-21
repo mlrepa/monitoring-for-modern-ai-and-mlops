@@ -7,6 +7,8 @@ prefect/*
 .dev
 .python-version
 *.parquet
+notebooks/gx
+gx
 
 # MLFlow 
 mlruns/*
