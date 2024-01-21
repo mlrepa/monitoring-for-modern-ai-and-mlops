@@ -1,7 +1,8 @@
-# Get Started with ML Monitoring
+![Основы ML мониторинга для Data Science](docs/images/monitoring-banner-1.png)
 
+# Тьюториал: Основы ML мониторинга для Data Science
 
-## :woman_technologist: Installation
+## 👩‍💻 Installation
 
 ### 1. Fork / Clone this repository
 
@@ -15,7 +16,7 @@ cd monitoring-1-get-started
 
 ### 2. Create a virtual environment
 
-- This example requires Python 3.9 or above 
+> ⚠️ This example requires Python 3.9 or above 
 
 ```bash
 python3 -m venv .venv
@@ -25,31 +26,30 @@ pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
 ```
 
-### 3 - Download data
+### 3. Download data
 
 This is a preparation step. Load data from [https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset](https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset) to the `data/` directory
 
-```bash 
+```bash
 python src/load_data.py              
 ```
 
-## :tv: Monitoring Examples
+## 📺 Monitoring Examples
 
 | No. | Monitoring Example | Description |
 |---|---|---|
 | 1. | **1-getting-started-tutorial.ipynb** | Get started with Evidently Monitoring |
 | 2. | **2-monitor-model.ipynb**| Model Monitoring with Evidently and MLFlow |
-| 3. | **3-data-drift.ipynb**| Evaluate Data Drift for train/test datasets with Evidently and MLFlow |
-| 4. | **4-great-expectatinos.ipynb** | Tutorial for Great Expectations |
+| 3. | **4-great-expectatinos.ipynb** | Tutorial for Great Expectations |
 
 
-## :checkered_flag: View experiments and monitoring reports in MLflow UI
+## 🏁 View experiments and monitoring reports in MLflow UI
 
 ```bash
 mlflow ui
 ``` 
-And then navigate to [http://localhost:5000](http://localhost:5000) in your browser
 
+And then navigate to [http://localhost:5000](http://localhost:5000) in your browser
 
 ## Acknowledgments
 
