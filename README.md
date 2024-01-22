@@ -40,7 +40,7 @@ python src/load_data.py
 |---|---|---|
 | 1. | **1-getting-started-tutorial.ipynb** | Get started with Evidently Monitoring |
 | 2. | **2-monitor-model.ipynb**| Model Monitoring with Evidently and MLFlow |
-| 3. | **4-great-expectatinos.ipynb** | Tutorial for Great Expectations |
+| 3. | **3-great-expectatinos.ipynb** | Tutorial for Great Expectations |
 
 
 ## 🏁 View experiments and monitoring reports in MLflow UI
