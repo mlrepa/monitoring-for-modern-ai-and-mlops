@@ -13,7 +13,6 @@ git clone https://gitlab.com/risomaschool/tutorials-raif/monitoring-1-get-starte
 cd monitoring-1-get-started
 ```
 
-
 ### 2. Create a virtual environment
 
 > ⚠️ This example requires Python 3.9 or above 
@@ -43,13 +42,26 @@ python src/load_data.py
 | 3. | **3-great-expectatinos.ipynb** | Tutorial for Great Expectations |
 
 
-## 🏁 View experiments and monitoring reports in MLflow UI
+## 🏁 Run MLflow to visualize experiments and monitoring reports
 
 ```bash
 mlflow ui
-``` 
+```
 
 And then navigate to [http://localhost:5000](http://localhost:5000) in your browser
+
+## Run Grafana to visualise monitoring metrics
+
+```bash
+docker compose up
+```
+
+The following services will be started:
+
+- *monitoring-db*: monitoring database (PostgreSQL) - for collecting model metrics
+- *grafana*: a service (tool) for visualizing metrics
+
+Navigate to Grafana UI on [http://localhost:3000](http://localhost:3000) in your browser. The default credentials are `admin/admin`
 
 ## Acknowledgments
 
