@@ -1,6 +1,6 @@
-![Основы ML мониторинга для Data Science](docs/images/monitoring-banner-1.png)
+![Comprehensive ML Monitoring for Modern AI and MLOps](docs/images/monitoring-banner-1.png)
 
-# Тьюториал: Основы ML мониторинга для Data Science
+# Comprehensive ML Monitoring for Modern AI and MLOps
 
 ## 👩‍💻 Installation
 
@@ -13,19 +13,46 @@ git clone https://gitlab.com/risomaschool/tutorials-raif/monitoring-1-get-starte
 cd monitoring-1-get-started
 ```
 
-### 2. Create a virtual environment
+### 2️⃣ Create and Activate Virtual Environment
 
-> ⚠️ This example requires Python 3.9 or above 
+It's highly recommended to use a virtual environment to manage project dependencies.
+
+Install `uv`:
 
 ```bash
-python3 -m venv .venv
-echo "export PYTHONPATH=$PWD" >> .venv/bin/activate
+# Install uv if you haven't already
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# Or consult official uv documentation for other installation methods
+   ```
+
+Create a virtual environment using `uv`:
+
+```bash
+uv venv .venv --python 3.12
+
+# Activate the virtual environment
+# On macOS and Linux:
 source .venv/bin/activate
-pip install --upgrade pip setuptools wheel
-pip install -r requirements.txt
+# On Windows:
+# .\.venv\Scripts\activate
 ```
 
-### 3. Download data
+> 👉 **Note:** The `uv venv .venv` command creates a virtual environment in a folder named `.venv` within your project directory.
+
+### 3️⃣ Install Dependencies
+
+With the virtual environment activated, install the required Python packages:
+
+```bash
+uv pip install -e .
+
+# Install development dependencies from pyproject.toml
+uv pip install --group dev .
+```
+
+> 👉 **Note:** Development dependencies are defined in `pyproject.toml` under `[dependency-groups]` and include tools for code quality (linters, formatters) and testing.
+
+### 4️⃣ Download data
 
 This is a preparation step. Load data from [https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset](https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset) to the `data/` directory
 
