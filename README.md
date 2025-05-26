@@ -9,7 +9,7 @@
 Get the tutorial example code:
 
 ```bash
-git clone https://gitlab.com/risomaschool/tutorials-raif/monitoring-1-get-started.git
+git clone https://github.com/mlrepa/monitoring-for-modern-ai-and-mlops.git
 cd monitoring-1-get-started
 ```
 
@@ -44,9 +44,10 @@ source .venv/bin/activate
 With the virtual environment activated, install the required Python packages:
 
 ```bash
+# First, install the project in editable mode
 uv pip install -e .
 
-# Install development dependencies from pyproject.toml
+# Then install development dependencies
 uv pip install --group dev .
 ```
 
