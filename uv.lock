@@ -1,10 +1,10 @@
 version = 1
 revision = 1
-requires-python = ">=3.11.6"
+requires-python = ">=3.11.1"
 resolution-markers = [
     "python_full_version >= '3.12' and sys_platform != 'win32'",
-    "python_full_version >= '3.12' and sys_platform == 'win32'",
     "python_full_version < '3.12' and sys_platform != 'win32'",
+    "python_full_version >= '3.12' and sys_platform == 'win32'",
     "python_full_version < '3.12' and sys_platform == 'win32'",
 ]
 
@@ -1181,6 +1181,38 @@ wheels = [
 ]
 
 [[package]]
+name = "ml-monitoring-tutorial"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "evidently" },
+    { name = "ipykernel" },
+    { name = "mlflow" },
+    { name = "pandas" },
+    { name = "pendulum" },
+    { name = "psycopg2-binary" },
+]
+
+[package.optional-dependencies]
+dev = [
+    { name = "mypy" },
+    { name = "ruff" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "evidently", specifier = ">=0.7.5" },
+    { name = "ipykernel", specifier = ">=6.29.5" },
+    { name = "mlflow", specifier = ">=2.22.0" },
+    { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.15.0" },
+    { name = "pandas", specifier = ">=2.2.3" },
+    { name = "pendulum", specifier = ">=3.1.0" },
+    { name = "psycopg2-binary", specifier = ">=2.9.10" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.11.11" },
+]
+provides-extras = ["dev"]
+
+[[package]]
 name = "mlflow"
 version = "2.22.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1233,41 +1265,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/16/1e/7d29817fa2370f88550e86ae2be4bee5f9efe82169032dc5b1cab642e5b6/mlflow_skinny-2.22.0.tar.gz", hash = "sha256:774b58970038990650486cd934d46b7038fc390682c3bde70b4e5106f6857cce", size = 5889903 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f4/eb/53dd2a5db1040a21da2980c382ebe3a9bda2d8af8365c2d01053c924b150/mlflow_skinny-2.22.0-py3-none-any.whl", hash = "sha256:9efc39454f6cc3433e7d804c3df8dab4fbba1abe504c52c05f00ef1d0696fef5", size = 6268849 },
-]
-
-[[package]]
-name = "monitoring-1-get-started"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "evidently" },
-    { name = "ipykernel" },
-    { name = "mlflow" },
-    { name = "pandas" },
-    { name = "pendulum" },
-    { name = "psycopg2-binary" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "mypy" },
-    { name = "ruff" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "evidently", specifier = ">=0.7.5" },
-    { name = "ipykernel", specifier = ">=6.29.5" },
-    { name = "mlflow", specifier = ">=2.22.0" },
-    { name = "pandas", specifier = ">=2.2.3" },
-    { name = "pendulum", specifier = ">=3.1.0" },
-    { name = "psycopg2-binary", specifier = ">=2.9.10" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "mypy", specifier = ">=1.15.0" },
-    { name = "ruff", specifier = ">=0.11.11" },
 ]
 
 [[package]]

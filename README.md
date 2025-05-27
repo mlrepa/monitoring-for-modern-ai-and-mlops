@@ -1,31 +1,35 @@
-![Comprehensive ML Monitoring for Modern AI and MLOps](docs/images/monitoring-banner-1.png)
+# Monitoring for Modern AI and MLOps Tutorial
 
-# Comprehensive ML Monitoring for Modern AI and MLOps
+![Comprehensive ML Monitoring for Modern AI and MLOps](static/images/monitoring-banner-1.png)
 
-## 👩‍💻 Installation
 
-### 1. Fork / Clone this repository
+This tutorial demonstrates how to monitor machine learning models in production using Evidently and Grafana. It provides a practical example of setting up monitoring for a bike sharing demand prediction model.
 
-Get the tutorial example code:
+## Overview
+
+The tutorial covers:
+- Setting up a development environment
+- Training a simple ML model
+- Implementing model monitoring with Evidently
+- Visualizing monitoring metrics in Grafana
+- Detecting data drift and model performance degradation
+
+## Prerequisites
+
+- Python 3.8.1+
+- Docker and Docker Compose
+- Git
+
+## Installation
+
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/mlrepa/monitoring-for-modern-ai-and-mlops.git
-cd monitoring-1-get-started
+cd monitoring-for-modern-ai-and-mlops
 ```
 
-### 2️⃣ Create and Activate Virtual Environment
-
-It's highly recommended to use a virtual environment to manage project dependencies.
-
-Install `uv`:
-
-```bash
-# Install uv if you haven't already
-curl -LsSf https://astral.sh/uv/install.sh | sh
-# Or consult official uv documentation for other installation methods
-   ```
-
-Create a virtual environment using `uv`:
+2. Create and activate a virtual environment:
 
 ```bash
 uv venv .venv --python 3.12
@@ -44,55 +48,73 @@ source .venv/bin/activate
 With the virtual environment activated, install the required Python packages:
 
 ```bash
-# First, install the project in editable mode
-uv pip install -e .
+# Install the project with all dependencies
+uv sync
 
-# Then install development dependencies
-uv pip install --group dev .
+# Install development dependencies (optional)
+uv sync --extra dev
 ```
 
-> 👉 **Note:** Development dependencies are defined in `pyproject.toml` under `[dependency-groups]` and include tools for code quality (linters, formatters) and testing.
+## Project Structure
 
-### 4️⃣ Download data
-
-This is a preparation step. Load data from [https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset](https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset) to the `data/` directory
-
-```bash
-python src/load_data.py              
+```text
+.
+├── data/              # Data directory
+├── models/            # Trained models
+├── notebooks/         
+│   ├── 1-evidently-getting-started.ipynb
+│   ├── 2-monitor-ml-model.ipynb
+│   └── 3-grafana-getting-started.ipynb
+├── src/               
+│   └── load_data.py
+├── docker-compose.yaml
+├── pyproject.toml
+└── README.md
 ```
 
-## 📺 Monitoring Examples
+## Getting Started
 
-| No. | Monitoring Example | Description |
-|---|---|---|
-| 1. | **1-getting-started-tutorial.ipynb** | Get started with Evidently Monitoring |
-| 2. | **2-monitor-model.ipynb**| Model Monitoring with Evidently and MLFlow |
-| 3. | **3-great-expectatinos.ipynb** | Tutorial for Great Expectations |
-| 4. | **4-monitoring-with-grafana.ipynb** | Monitoring with Grafana |
+1. Load data:
 
-## 🏁 Run MLflow to visualize experiments and monitoring reports
+Load data from [https://archive.ics.uci.edu/ml/
+datasets/bike+sharing+dataset](https://archive.ics.uci.edu/ml/datasets/bike
++sharing+dataset) to the `data/` directory
 
 ```bash
-mlflow ui
+python src/load_data.py
 ```
 
-And then navigate to [http://localhost:5000](http://localhost:5000) in your browser
-
-## Run Grafana to visualise monitoring metrics
+2. Start the monitoring stack:
 
 ```bash
-docker compose up
+docker-compose up -d
 ```
 
 The following services will be started:
 
-- *monitoring-db*: monitoring database (PostgreSQL) - for collecting model metrics
+- *monitoring-db*: monitoring database (PostgreSQL) - for collecting model 
+metrics
 - *grafana*: a service (tool) for visualizing metrics
 
-Navigate to Grafana UI on [http://localhost:3000](http://localhost:3000) in your browser. The default credentials are `admin/admin`
+Navigate to Grafana UI on [http://localhost:3000](http://localhost:3000) in 
+your browser. The default credentials are `admin/admin`
+
+### 3. Open `tutorial.md` and run the notebooks in order:
+
+- `1-evidently-getting-started.ipynb`: Introduction to Evidently
+- `2-monitor-ml-model.ipynb`: Setting up model monitoring
+- `3-grafana-getting-started.ipynb`: Visualizing metrics in Grafana
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
 
-The dataset used in the example is downloaded from: https://www.kaggle.com/c/bike-sharing-demand/data?select=train.csv
-- Fanaee-T, Hadi, and Gama, Joao, 'Event labeling combining ensemble detectors and background knowledge', Progress in Artificial Intelligence (2013): pp. 1-15, Springer Berlin Heidelberg
-- More information about the dataset can be found in UCI machine learning repository: https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset
+- Dataset: [UCI Bike Sharing Dataset](https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset)
+- Evidently: [https://www.evidentlyai.com/](https://www.evidentlyai.com/)
+- Grafana: [https://grafana.com/](https://grafana.com/)
