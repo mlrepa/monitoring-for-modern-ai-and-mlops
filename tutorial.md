@@ -23,44 +23,41 @@
 
 ## 📖 Table of Contents
 
-- [🚀 Tutorial: Comprehensive ML Monitoring for Modern AI and MLOps](#-tutorial-comprehensive-ml-monitoring-for-modern-ai-and-mlops)
-  - [👀 Overview](#-overview)
-  - [📖 Table of Contents](#-table-of-contents)
-  - [⚙️ 1 - Prerequisites & Installation](#️-1---prerequisites--installation)
-- [🛠️ 2 - ML Monitoring: Core Tasks and Tools in MLOps](#️-2---ml-monitoring-core-tasks-and-tools-in-mlops)
-  - [Essential Monitoring Layers in ML Systems](#essential-monitoring-layers-in-ml-systems)
-  - [Monitoring Paradigms: Batch vs. Online](#monitoring-paradigms-batch-vs-online)
-  - [Beyond Tabular Data: Monitoring Other AI Systems](#beyond-tabular-data-monitoring-other-ai-systems)
-  - [Popular Open-Source Tools for ML Monitoring](#popular-open-source-tools-for-ml-monitoring-1)
-- [🏎️ 3 - Evidently AI: Generating Model & Data Quality Insights (using the modern API)](#️-3---evidently-ai-generating-model--data-quality-insights-using-the-modern-api)
-  - [A Note on Evidently AI API Changes](#a-note-on-evidently-ai-api-changes)
-  - [Step 1: Import Evidently AI and Dependencies](#step-1-import-evidently-ai-and-dependencies-1)
-  - [Step 2: Prepare Your Data (Reference vs. Current)](#step-2-prepare-your-data-reference-vs-current-1)
-  - [Step 3: Generate Data Drift Reports](#step-3-generate-data-drift-reports-1)
-  - [Step 4: Generate Custom Reports](#step-4-generate-custom-reports)
-  - [Step 5: Customize and Save Reports](#step-5-customize-and-save-reports)
-- [🤝 4 - Integrating Evidently AI with MLflow for Model Performance Monitoring (Weekly Comparison)](#-4---integrating-evidently-ai-with-mlflow-for-model-performance-monitoring-weekly-comparison)
-  - [Step 1: Load Data](#step-1-load-data-2)
-  - [Step 2: Define Data Structure (Column Mapping)](#step-2-define-data-structure-column-mapping-1)
-  - [Step 3: Train a Simple Model](#step-3-train-a-simple-model-1)
-  - [Step 4: Prepare Reference Dataset](#step-4-prepare-reference-dataset-1)
-  - [Step 5: Prepare Current Dataset (Example Batch)](#step-5-prepare-current-dataset-example-batch)
-  - [Step 6: Generate a Model Quality Report with Evidently AI](#step-6-generate-a-model-quality-report-with-evidently-ai-1)
-  - [Step 7: Extract Key Metrics from the Evidently AI Report](#step-7-extract-key-metrics-from-the-evidently-ai-report-1)
-  - [Step 8: Log Reports and Metrics to MLflow (Weekly Batches)](#step-8-log-reports-and-metrics-to-mlflow-weekly-batches)
-- [📊 5 - Visualizing ML Metrics with Grafana and PostgreSQL](#-6---visualizing-ml-metrics-with-grafana-and-postgresql-1)
-  - [Step 1: Launch Grafana and PostgreSQL](#step-1-launch-grafana-and-postgresql-1)
-  - [Step 2: Calculate Monitoring Metrics (Using Evidently AI)](#step-2-calculate-monitoring-metrics-using-evidently-ai-1)
-  - [Step 3: Prepare the PostgreSQL Monitoring Database](#step-3-prepare-the-postgresql-monitoring-database-1)
-  - [Step 4: Log Model Quality Metrics to PostgreSQL](#step-4-log-model-quality-metrics-to-postgresql-1)
-  - [Step 5: Explore the Pre-configured Grafana Dashboard](#step-5-explore-the-pre-configured-grafana-dashboard-1)
-  - [Step 6: Customize Grafana Panels (Exercise)](#step-6-customize-grafana-panels-exercise-1)
-- [🔗 6 - Additional Resources](#-7---additional-resources-1)
-- [🎉 7 - Next Steps & Conclusion](#-8---next-steps--conclusion-1)
+<!-- 1. [🚀 Tutorial: Monitoring for Modern AI and MLOps](#-tutorial-monitoring-for-modern-ai-and-mlops) -->
+   1. [👀 Overview](#-overview)
+   2. [📖 Table of Contents](#-table-of-contents)
+   3. [⚙️ Prerequisites \& Installation](#️-prerequisites--installation)
+   4. [🛠️ ML Monitoring: Core Tasks and Concepts in MLOps](#️-ml-monitoring-core-tasks-and-concepts-in-mlops)
+      1. [Essential Monitoring Layers in ML Systems (General)](#essential-monitoring-layers-in-ml-systems-general)
+      2. [Monitoring for Modern AI Applications (LLMs, Agents, RAGs)](#monitoring-for-modern-ai-applications-llms-agents-rags)
+      3. [Monitoring Paradigms: Batch vs. Online](#monitoring-paradigms-batch-vs-online)
+      4. [Popular Open-Source Tools for ML Monitoring](#popular-open-source-tools-for-ml-monitoring)
+   5. [🏎️ Evidently AI for ML Models and Data Quality](#️-evidently-ai-for-ml-models-and-data-quality)
+      1. [Step 1: Prepare the data](#step-1-prepare-the-data)
+      2. [Step 2: Create a monitoring report](#step-2-create-a-monitoring-report)
+      3. [Step 3: Visualize or save the report](#step-3-visualize-or-save-the-report)
+   6. [🧠 Evidently AI for LLM-powered Systems and Agents](#-evidently-ai-for-llm-powered-systems-and-agents)
+      1. [Overview of Key Features](#overview-of-key-features)
+      2. [Use Cases and Applications](#use-cases-and-applications)
+      3. [Step 1: Create a free account at Evidently Cloud](#step-1-create-a-free-account-at-evidently-cloud)
+      4. [Step 2: Create a Project "RAG Evaluation"](#step-2-create-a-project-rag-evaluation)
+      5. [Step 3: Run the RAG Evaluation example](#step-3-run-the-rag-evaluation-example)
+   7. [🤖 Tracing and Evaluating AI Agents with MLflow](#-tracing-and-evaluating-ai-agents-with-mlflow)
+      1. [Step 1: Gaining Visibility with Autologging](#step-1-gaining-visibility-with-autologging)
+      2. [Step 2: Tracking Metrics and Artifacts](#step-2-tracking-metrics-and-artifacts)
+      3. [Step 3: Managing and Comparing Prompts with MLflow Prompt Registry](#step-3-managing-and-comparing-prompts-with-mlflow-prompt-registry)
+      4. [Conclusion](#conclusion)
+      5. [Step 2: Calculate Monitoring Metrics (Using Evidently AI)](#step-2-calculate-monitoring-metrics-using-evidently-ai)
+      6. [Step 3: Prepare the PostgreSQL Monitoring Database](#step-3-prepare-the-postgresql-monitoring-database)
+      7. [Step 4: Log Model Quality Metrics to PostgreSQL](#step-4-log-model-quality-metrics-to-postgresql)
+      8. [Step 5: Explore the Pre-configured Grafana Dashboard](#step-5-explore-the-pre-configured-grafana-dashboard)
+      9. [Step 6: Customize Grafana Panels (Exercise)](#step-6-customize-grafana-panels-exercise)
+   8. [🔗 7 - Additional Resources](#-7---additional-resources)
+   9. [🎉 8 - Next Steps \& Conclusion](#-8---next-steps--conclusion)
 
 ---
 
-## ⚙️ 1 - Prerequisites & Installation
+## ⚙️ Prerequisites & Installation
 
 Before you start with ML monitoring, make sure your development environment is ready with Python, the necessary tools, and the project code.
 
@@ -90,7 +87,7 @@ Once you have completed the setup steps in the `README.md`, your environment wil
 
 ---
 
-## 🛠️ 2 - ML Monitoring: Core Tasks and Concepts in MLOps
+## 🛠️ ML Monitoring: Core Tasks and Concepts in MLOps
 
 Effective ML monitoring is a cornerstone of robust MLOps practices, ensuring models perform reliably and deliver value over time. It's the continuous process of observing, tracking, and analyzing the performance, behavior, and data of ML systems in production.
 
@@ -159,7 +156,7 @@ Here's an overview of popular tools, including those covered in this tutorial:
 | :--------------------- | :------------------------------------------------ | :-------------------------------------------------------------------- | :------------ |
 | **Evidently AI**       | Data & Model Drift, Performance Reports           | Text & Embedding Drift, LLM Evaluation Metrics (via custom). Visual reports. | **Yes**       |
 | **Grafana**            | Time-Series Visualization & Dashboarding          | Visualize *any* ML metric over time (Drift, Performance, Cost, etc.)    | **Yes**       |
-| **MLflow**             | ML Lifecycle (Tracking, Logging, Registry)        | Log monitoring results (reports, metrics), model artifacts. Historical view. | **Yes**       |
+| **MLflow**             | ML Lifecycle (Tracking, Logging, Registry)        | Log monitoring results (reports, metrics), model artifacts. Historical view. | No      |
 | **whylogs**            | Data Profiling & Statistical Monitoring           | Profile Text/Embeddings, generate statistical summaries, detect drift. | No            |
 | **Phoenix (by Arize)** | LLM Application Observability & Evaluation        | RAG/Agent tracing, LLM generation evaluation (factuality, etc.). UI for analysis. | No            |
 | **OpenTelemetry**      | Application Instrumentation & Tracing             | Instrumental for tracing multi-step Agent/RAG pipeline execution.   | No            |
@@ -167,103 +164,271 @@ Here's an overview of popular tools, including those covered in this tutorial:
 
 ---
 
-## 🏎️ 3 - Evidently AI: Generating Model & Data Quality Insights (using the modern API)
+## 🏎️ Evidently AI for ML Models and Data Quality
 
-**Evidently AI** calculates a wide array of metrics for data and ML models, presenting them in interactive HTML reports or JSON snapshots. This is invaluable for debugging, validation, and ongoing monitoring. Evidently supports tabular data, text, and embeddings. [12, 18, 23]
+**Evidently AI** is a tool designed to calculate a wide array of metrics for evaluating your ML models and data quality. It presents these insights in interactive HTML reports or JSON snapshots, which are invaluable for debugging, validation, and crucial for ongoing monitoring. Evidently supports various data types, including tabular data, text, and embeddings.
 
-<!-- <img src="static/images/Untitled%203.png" width="800" alt="Evidently AI High-Level Workflow Diagram"> -->
+<img src="static/images/Untitled%203.png" width="800" alt="Evidently AI High-Level Workflow Diagram: Data -> Evidently -> Report/Metrics">
+
+ML monitoring within a ML model lifecycle (or ML pipeline) typically involves distinct stages:
+
+*   **T - 1 (Training):** The model is trained or updated using historical data (Reference Data). This process can occur daily, weekly, or on another defined schedule.
+*   **T = 0 (Prediction):** The trained model is used to make predictions on the most recent data (Current Data).
+*   **T + 1 (Monitoring):** After predictions are made (and sometimes when actual outcomes or Ground Truth Data become available), you monitor the model's performance and the data's characteristics on this new data, often by comparing it back to the Reference Data.
+
+<img src="static/images/Untitled.png" width="800" alt="ML Pipeline Stages: Training, Prediction, Monitoring">
+
+In the context of monitoring these ML pipelines, the key objectives include:
+
+1.  **Monitor Model Performance:** Evaluate how well the model is performing on new data over time. This involves checking stability and accuracy using appropriate metrics (if ground truth is available).
+2.  **Monitor Data Quality & Drift:** Track changes in the characteristics of the input data, such as shifts in feature distributions, missing values, or new categories. Data drift can silently degrade model performance.
+3.  **Monitor Prediction Drift:** Analyze changes in the distribution of the model's outputs or predictions over time. This can signal potential issues even before you have ground truth data to measure performance directly.
+
+Evidently AI provides the tools and metrics necessary to perform these monitoring tasks effectively. Its core workflow involves comparing your "Current Data" (from the T=0 prediction step) and optionally "Ground Truth" (from T+1) against your "Reference Data" (from the T-1 training step).
 
 
 
+### Step 1: Prepare the data
 
-### Step 1: Evidently AI for ML Monitoring
+> 💡 **Open the example notebook:** `notebooks/1-evidently-getting-started.ipynb`
 
-> 💡 **Open the example notebook:** `notebooks/1-evidently-getting-started.ipynbb`
+Let's begin with a practical example using Evidently AI to monitor a dataset.
 
-- tabular data 
-- metrics and reports calculation 
+In most cases, Evidently uses two datasets (`reference` and `current`) to calculate metrics and generate reports:
 
-### Step 2: Incorporate into Monitoring Job
+*   The **`reference`** dataset is the benchmark or baseline data. This typically consists of data used for model training or a sample from historical *production* data.
+*   The **`current`** dataset is the recent or ongoing *production* data that you want to compare against the reference.
 
+<img src="static/images/Untitled%205.png" width="800" alt="Monitoring data">
 
+### Step 2: Create a monitoring report
 
-### Step 3: Create Custom Reports
-
-You can add any combination of metrics to a report.
+The next step is to create a monitoring report. Evidently AI provides a wide range of [metrics and presets](https://docs.evidentlyai.com/metrics/all_presets) to evaluate the quality of your data and model.
 
 ```python
-custom_report = Report(metrics=[
-    ColumnSummaryMetric(column_name='AveRooms'),
-    ColumnQuantileMetric(column_name='AveRooms', quantile=0.25),
-    ColumnDriftMetric(column_name='AveRooms')
-])
-
-custom_report.run(reference_data=reference_df, current_data=current_df, column_mapping=column_mapping)
-custom_report.show(mode='inline')
+report = Report([
+        DataSummaryPreset() #or try DataDriftPreset()
+    ],
+    include_tests="True"
+)
+my_eval = report.run(eval_data_1, eval_data_2)
 ```
+
+### Step 3: Visualize or save the report
+
+You can visualize the report in Evidently Cloud or inside the notebook.
 
 <img src="static/images/Untitled%208.png" width="800" alt="Evidently AI Custom Report showing specific metrics for 'AveRooms'">
 
-> 💡 For more examples of metrics and reports, see the [Official Evidently AI Documentation](https://docs.evidentlyai.com/get-started/tutorial#4.-get-the-data-drift-report) and explore the various `evidently.metrics` classes. [3, 18]
-
-### Step 5: Save Reports
-
-You can export reports as:
+You may export the report in HTML or JSON format.
 
 ```python
-report_dict = custom_report.as_dict()
-custom_report.save_html("custom_averooms_report.html")
-# data_drift_report.save_json("data_drift_snapshot.json") # For Evidently Monitoring UI
+my_eval.save_html('report.html')
 ```
-
-> ℹ️ **Monitoring as Code:** Configurations for Evidently AI reports can be version-controlled, aligning with "Monitoring as Code" MLOps principles.
 
 ---
 
-## 🤝 4 - Integrating Evidently AI with MLflow for Model Performance Monitoring 
+## 🧠 Evidently AI for LLM-powered Systems and Agents
 
-> 💡 **Open the example notebook:** `notebooks/2-monitor-model-evidently-mlflow.ipynb`
+As LLMs power increasingly complex systems and **AI Agents** that perform multi-step tasks and use tools, ensuring their reliability and safety is crucial. Evidently AI provides a dedicated platform to comprehensively test these advanced LLM systems and agents, helping teams build robust and safe AI products.
 
-Log Evidently AI reports and extracted metrics to MLflow to track model quality over time alongside your experiments. This section demonstrates monitoring model performance on a weekly basis using a regression example.
-
-### Step 1: Run a MLflow Tracking Server
-
-> Use MLflow 3+ API 
+<img src="https://github.com/evidentlyai/docs/raw/eb1630cdd80d31d55921ff4d34fc7b5e6e9c9f90/images/dashboard_llm_tabs.gif" alt="Evidently AI Dashboard LLM tabs GIF" width="800">
 
 
-### Step 2: Calculate metrics and reports with Evidently AI
+### Overview of Key Features
 
-### Step 3: Log metrics to MLflow
+Evidently AI covers the full testing lifecycle for LLM systems and agents with these core capabilities:
 
-Accessing metrics from a report using  `.dict()`  method.
+1.  **Automated Evaluations (EVALS):**
+    *   Run structured tests using built-in and custom metrics (factuality, relevance, safety, **agent logic, tool use**).
+    *   Scale grading with LLM-as-a-judge.
+    *   Catch hallucinations, errors, and safety risks early.
+
+2.  **Synthetic Data Generation:**
+    *   Generate realistic test cases, including **complex multi-turn interactions for agents**.
+    *   Test edge cases and **adversarial attacks specific to agents** (e.g., prompt injection via tools).
+    *   Adapt tests as user behavior and risks evolve.
+
+3.  **Test Suite Management (TEST):**
+    *   Organize and version test suites for different models, prompts, and **agent workflows**.
+    *   Collaborate with experts on test case definition.
+    *   Catch regressions automatically in your pipeline.
+
+4.  **Comprehensive Reports:**
+    *   Get clear insights into where the system or **agent** fails.
+    *   Compare different versions side-by-side.
+    *   Drill into specific failures (**including agent step-by-step analysis**).
+    *   Prioritize fixes based on failure patterns.
+
+5.  **Continuous Monitoring:**
+    *   Track performance in production post-launch.
+    *   Validate new releases and updates with automated tests.
+    *   Identify emerging risks and **shifts in agent behavior** with live data.
+
+### Use Cases and Applications
+
+Evidently AI helps you focus testing on critical risks and workflows:
+
+*   **AI Agent Testing:** Directly test the reliability and effectiveness of **multi-step workflows, reasoning, and tool use** in agents.
+*   **Adversarial Testing:** Evaluate system and agent resilience against jailbreaks, PII leaks, and harmful content generation.
+*   **RAG Evaluation:** Test hallucination and retrieval failures, especially for RAG components used by agents.
+*   **ML System Monitoring:** Monitor traditional ML components interacting with or orchestrated by your agents.
+
+Using Evidently AI provides the confidence, safety assurance, and debug insights needed for complex LLM-powered systems and AI Agents.
+
+### Step 1: Create a free account at Evidently Cloud
+
+For more details, see [Evidently Cloud Documentation](https://docs.evidentlyai.com/docs/setup/cloud)
+
+### Step 2: Create a Project "RAG Evaluation"
+
+<img src="static/images/evidently-create-project.png" width="800" alt="Grafana Welcome Login Screen">
+
+
+### Step 3: Run the RAG Evaluation example
+
+> 💡 **Open the example notebook:** `notebooks/2-evidenlty-rag-metrics.ipynb`
+
+
+## 🤖 Tracing and Evaluating AI Agents with MLflow
+
+Developing AI Agents that perform multi-step tasks, utilize tools, and interact with external systems presents significant challenges. Unlike traditional software, their execution can feel like a "black box" – opaque, hard to debug, and difficult to compare across iterations. MLflow provides powerful capabilities to bring structure, observability, and rigorous evaluation to the agent development lifecycle.
+
+> 💡 This section uses an example adapted from a [tutorial notebook demonstrating MLflow with CrewAI](https://github.com/mnrozhkov/nebius-ai-examples/blob/main/mlflow-examples/mlflow-agent-ai-research.ipynb).
+
+The scenario involves a CrewAI system designed to research AI/ML tools. We'll see how MLflow tackles common agent development problems:
+
+*   **Black Box Execution:** Understanding the step-by-step process and reasoning.
+*   **Comparing Changes:** Reliably evaluating the impact of prompt or configuration tweaks.
+*   **Debugging Failures:** Pinpointing *why* an agent failed and what happened before the error.
+*   **Performance & Cost:** Tracking execution time, token usage, and associated costs.
+*   **Output Quality:** Systematically evaluating the quality of the agent's final output.
+
+Let's explore how MLflow features address these issues, following the pattern of the example notebook.
+
+### Step 1: Gaining Visibility with Autologging
+
+Initially, running an agent often results in a flood of verbose console output that's hard to parse or save for later analysis. The first step to observability is capturing the execution trace.
+
+MLflow's `mlflow.<framework>.autolog()` feature can automatically log key information from supported libraries like CrewAI.
 
 ```python
-mlflow.log_metrics(report.dict())
+import mlflow
+
+# Turn on auto tracing for CrewAI
+mlflow.crewai.autolog()
+
+# Set an experiment name for better organization
+mlflow.set_experiment("Agent Research Pipeline")
+
+# Instantiate and run your agent crew
+# ai_dev_crew = AIOpsResearchCrew(...)
+# result = ai_dev_crew.run()
 ```
 
-> Note: The exact structure of the dictionary returned by `.dict()` can evolve with Evidently AI versions. Always refer to the [official documentation](https://docs.evidentlyai.com/reference/report) or inspect the `.dict()` output for the version you are using to ensure correct metric extraction.
+By simply adding `mlflow.crewai.autolog()`, MLflow will automatically record information about the LLM calls made by the agents within the crew run. While basic, this starts the process of structured logging, capturing inputs and outputs of the underlying LLM interactions which are the core of agent decision-making.
 
-### Step 4: Log Reports to MLflow
+### Step 2: Tracking Metrics and Artifacts
 
-This loop demonstrates processing and monitoring data week by week, logging the results to MLflow for tracking model performance trends over time.
+To go beyond simple tracing and enable quantitative comparison and debugging, you need to explicitly log key data points and outputs:
+
+*   **Parameters:** Log the configuration used for the run (e.g., the task description, the existing tech stack, LLM parameters).
+*   **Metrics:** Track quantitative measures like execution time, the number of tokens used (both prompt and completion), and estimated cost. 
+*   **Artifacts:** Save the outputs of the agent's work, such as generated reports, analysis files (e.g., JSON outputs from intermediate tasks).
+
+Modify your agent execution logic to wrap the run in an `mlflow.start_run()` block and use `mlflow.log_param()`, `mlflow.log_metrics()`, and `mlflow.log_artifact()`.
 
 ```python
+# Example snippet from a modified Crew class's run method
+import time
+import json
+import os
 
-mlflow.set_experiment("Bike Sharing Model Monitoring")
+# ... inside a method, after crew setup ...
 
-# add report to mlflow example
+with mlflow.start_run(run_name=f"Tool_Research_{int(time.time())}") as mlflow_run:
+    # Run the agent crew
+    # result = self.crew.kickoff()
+
+    # Log parameters (task, stack, etc.)
+    mlflow.log_param("task", self.task)
+    mlflow.log_param("ai_stack", self.ai_stack)
+    # Add other relevant params like LLM model name, agent configurations...
+
+    # Log metrics (token usage, time, cost)
+    if hasattr(self.crew, 'usage_metrics'):
+         mlflow.log_metrics(json.loads(self.crew.usage_metrics.json())) # Example from CrewAI
+
+    # Log output files generated by the agent tasks
+    artifact_files = [
+        "output/tool_candidates.json",
+        "output/tool_analysis.json",
+        "output/tool_recommendation_report.md",
+    ]
+    for file_path in artifact_files:
+        if os.path.exists(file_path):
+            mlflow.log_artifact(file_path)
+
+    # Optionally log a status tag for easy filtering
+    mlflow.set_tag("status", "SUCCESS" if os.path.exists("output/tool_recommendation_report.md") else "FAILED")
+
+# ... rest of the method ...
 ```
 
-<!-- UPDATE IMAGE  -->
-<img src="static/images/4-8-mlflow.png" width="800" alt="MLflow UI showing logged metrics and Evidently AI report artifacts">
+Viewing the run in the MLflow UI now provides a structured summary of the inputs, performance metrics, and generated outputs, making it much easier to see the result of each execution and compare runs.
 
-> 💡 **MLOps Loop:** This batch monitoring is a key component of an MLOps loop. Significant drift or performance degradation logged here could trigger automated alerts or even a model retraining pipeline.
+### Step 3: Managing and Comparing Prompts with MLflow Prompt Registry
 
----
+Prompts are critical "parameters" for LLMs and agents, yet managing their versions and tying them to specific runs is challenging. The MLflow Prompt Registry provides a centralized system for this.
 
-## 📊 5 - Visualizing ML Metrics with Grafana and PostgreSQL
+```python
+# Register a new prompt template
+prompt_version = mlflow.register_prompt(
+    name="create-report-prompt", # A name for your prompt
+    template="Your prompt template here with {{placeholders}}",
+    commit_message="Initial version of the report generation prompt",
+    version_metadata={"purpose": "Generates final research report"}
+)
 
-> 💡 **Open the example notebook:** `notebooks/4-monitor-model-with-grafana.ipynb`
+# Update the prompt template (registers a new version)
+improved_prompt_version = mlflow.register_prompt(
+    name="create-report-prompt",
+    template="An improved prompt template...",
+    commit_message="Added instructions for Markdown formatting",
+)
+
+# Load a specific version (or the latest) of the prompt
+loaded_prompt = mlflow.load_prompt("create-report-prompt") # Loads latest version by default
+# or mlflow.load_prompt("create-report-prompt@latest")
+# or mlflow.load_prompt("create-report-prompt/2") # Load version 2
+
+# Use the loaded prompt template in your agent task definition
+# tasks.create_report_task(..., description=loaded_prompt.format(task=self.task, ai_stack=self.ai_stack))
+```
+
+Using the Prompt Registry:
+*   Provides version control for prompts.
+*   Allows you to easily load specific prompt versions in your code.
+*   Crucially, MLflow automatically logs which version of a registered prompt was used in an MLflow run when you use `mlflow.load_prompt`. This creates a direct link between prompt versions and run results in the UI.
+
+
+### Conclusion
+
+Integrating MLflow into your AI Agent development process, as demonstrated by the CrewAI example, transforms it from a potentially chaotic "black box" into a structured engineering workflow. You gain:
+
+*   **Traceability:** Understand agent execution and LLM calls.
+*   **Reproducibility:** Capture configurations and prompt versions precisely.
+*   **Comparison:** Systematically evaluate the impact of changes on performance, cost, and quality.
+*   **Debugging:** Quickly diagnose failures using logged information and artifacts.
+*   **Evaluation:** Automate quality assessment using methods like LLM-as-a-judge.
+
+By leveraging MLflow tracking, logging, evaluation, and prompt management features, you can iterate faster, debug more effectively, and build more reliable and performant AI agents.
+
+--- 
+
+## 📊 Monitoring AI Systems with Grafana and PostgreSQL
+
+> 💡 **Open the example notebook:** `notebooks/3-grafana-getting-started.ipynb`
 
 Use Grafana to create dashboards for ML metrics stored in PostgreSQL. This allows visualizing trends in model performance and data drift over time.
 
@@ -276,6 +441,7 @@ docker compose up -d
 ```
 
 <img src="static/images/6-1-welcome.png" width="800" alt="Grafana Welcome Login Screen">
+
 <img src="static/images/6-3-open-dashboard.png" width="800" alt="Navigating to Grafana Dashboards and opening Model Performance">
 <img src="static/images/6-4-no-data-1.png" width="800" alt="Initial Empty Grafana Dashboard for Model Performance">
 
@@ -313,15 +479,9 @@ docker compose up -d
 ## 🔗 7 - Additional Resources
 
 - [Evidently AI Official Documentation](https://docs.evidentlyai.com/)
-- [Evidently AI Blog: Monitoring ML systems in production](https://www.evidentlyai.com/blog/ml-monitoring-metrics)
-- [Evidently AI Blog: Batch ML monitoring blueprint](https://www.evidentlyai.com/blog/batch-ml-monitoring-architecture)
-- **Evidently AI LLM/NLP/RAG Monitoring:**
-  - [Evidently AI Documentation on LLM Evaluation and Monitoring](https://docs.evidentlyai.com/get-started/tutorial-llm) [27]
-  - [Evidently AI Community Examples for LLM/Text](https://github.com/evidentlyai/community-examples/tree/main/examples/llm_text_descriptors) [29]
-  - [Evidently AI YouTube Tutorial on LLM Evaluation](https://www.youtube.com/watch?v=s_gg3qW4JcQ) [27]
-  - [Evidently AI YouTube Tutorial on Drift Monitoring for LLM Apps](https://www.youtube.com/watch?v=2d3-wD7w1wA) [28]
-- [Great Expectations Official Documentation](https://docs.greatexpectations.io/docs/oss/tutorials/quickstart) [7]
-- [Great Expectations Blog: Why data quality is key to MLOps](https://greatexpectations.io/blog/ml-ops-data-quality)
+- [🧠 LLM Evaluation Course](https://github.com/evidentlyai/community-examples/tree/main/learn)
+  - [Video lectures](https://youtube.com/playlist?list=PL9omX6impEuNTr0KGLChHwhvN-q3ZF12d&feature=shared)
+  - Code examples https://github.com/evidentlyai/community-examples/tree/main/learn 
 - [Grafana Documentation](https://grafana.com/docs/grafana/latest/)
 - [MLflow Documentation](https://mlflow.org/docs/latest/index.html)
 
@@ -335,22 +495,15 @@ Congratulations on completing this tutorial on ML monitoring! You've explored ke
 
 ML monitoring is a dynamic and critical field in MLOps. Continuous learning and adapting these tools will be key to building trustworthy and reliable AI systems. Consider exploring:
 
-- 📊 **Evidently AI Tests & Test Suites:** Beyond reports, explore using Evidently AI `Tests` and `TestSuites` for programmatic assertions on data and model metrics, enabling automated checks in CI/CD pipelines.
-- 🔄 **Online/Real-time Monitoring Implementation:** Investigate architectures and tools needed to implement online monitoring for low-latency inference services, contrasting it further with the batch examples covered here. [2, 33, 34, 40]
-- 📈 **Monitoring Other Data Types:** Dive deeper into monitoring methodologies and metrics for non-tabular data, such as text, images, and embeddings, including tools like Evidently AI's specific metrics for these data types. [2, 18, 37, 41, 43, 44]
-- 🚨 **Anomaly Detection:** Learn how to apply anomaly detection techniques directly to your monitoring metrics (e.g., sudden spikes in error rates, unexpected drops in throughput) to set up more intelligent alerting. [8, 10, 31, 35, 36]
-- ⚖️ **Explainability & Fairness Monitoring:** Extend monitoring to track metrics related to model explainability (understanding *why* a model made a prediction) and fairness (identifying and mitigating bias in predictions across different groups).
-- 💰 **Cost Monitoring:** Integrate monitoring of computational resources (CPU, GPU, memory) and cloud service costs associated with your ML inference and monitoring infrastructure. [17, 24, 25, 32]
+- 🔄 **Online/Real-time Monitoring Implementation:** Investigate architectures and tools needed to implement online monitoring for low-latency inference services, contrasting it further with the batch examples covered here.
+- 📈 **Monitoring Other Data Types:** Dive deeper into monitoring methodologies and metrics for non-tabular data, such as text, images, and embeddings, including tools like Evidently AI's specific metrics for these data types.
+- 💰 **Cost Monitoring:** Integrate monitoring of computational resources (CPU, GPU, memory) and cloud service costs associated with your ML inference and monitoring infrastructure.
 - 🔗 **Data Pipeline Monitoring:** Expand your focus upstream to monitor the health, performance, and data quality of the ETL/ELT pipelines that prepare data for your ML models. Great Expectations is a part of this, but consider pipeline orchestration tool monitoring too.
-- 🔬 **ML Observability Platforms:** Investigate dedicated commercial or advanced open-source platforms (like Arize, Fiddler, WhyLabs, Aporia, Evidently Cloud) that offer integrated ML observability capabilities, often including real-time monitoring, sophisticated alerting, and debugging tools. [5, 7, 12, 15, 23]
-- ☁️ **Cloud-Native Monitoring:** Explore the monitoring services offered by major cloud providers (AWS SageMaker Model Monitor, GCP Vertex AI Model Monitoring, Azure ML Model Monitoring) if you are working within a specific cloud ecosystem. [9, 11, 13, 20, 21]
+- 🔬 **ML Observability Platforms:** Investigate dedicated commercial or advanced open-source platforms (like Arize, Fiddler, WhyLabs, Aporia, Evidently Cloud) that offer integrated ML observability capabilities, often including real-time monitoring, sophisticated alerting, and debugging tools.
+- ☁️ **Cloud-Native Monitoring:** Explore the monitoring services offered by major cloud providers (AWS SageMaker Model Monitor, GCP Vertex AI Model Monitoring, Azure ML Model Monitoring) if you are working within a specific cloud ecosystem.
 - ⚙️ **Automate with Orchestrators:** Integrate monitoring jobs (like running Evidently reports or GX checkpoints) into MLOps pipelines using orchestrators like Airflow, Kubeflow, or Prefect.
-- 🔔 **Advanced Alerting:** Set up sophisticated alerts in Grafana or via custom scripts triggered by monitoring results, routing notifications to the appropriate teams. [14, 16, 19, 22]
+- 🔔 **Advanced Alerting:** Set up sophisticated alerts in Grafana or via custom scripts triggered by monitoring results, routing notifications to the appropriate teams.
 
 Armed with the knowledge from this tutorial and a path forward for deeper exploration, you are well-equipped to build and maintain robust and reliable AI systems in a modern MLOps environment.
 
-<img src="static/images/monitoring-notes-1.png" width="800" alt="Concluding notes on ML Monitoring">
-
 [⬆️ Back to Table of Contents](#-table-of-contents)
-
-```
