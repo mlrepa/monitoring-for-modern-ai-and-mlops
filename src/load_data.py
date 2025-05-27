@@ -1,13 +1,13 @@
 import datetime
 import io
 import logging
+import zipfile
 from pathlib import Path
+from typing import NoReturn
+
 import pandas as pd
 import requests
-from typing import Text, NoReturn
-import zipfile
 from requests.exceptions import RequestException
-
 
 DATASET_URL = "https://archive.ics.uci.edu/static/public/275/bike+sharing+dataset.zip"
 DATA_DIR = "data"
@@ -21,21 +21,22 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-def download_data(destination_path: Text) -> NoReturn:
+
+def download_data(destination_path: str) -> NoReturn:
     """
     Download the Bike Sharing dataset from UCI machine learning repository.
-    
+
     Args:
         destination_path: Path where the downloaded data will be saved
-        
+
     Raises:
         RequestException: If the download fails
         IOError: If there are issues with file operations
-        
-    More information about the dataset can be found in UCI machine learning repository: 
+
+    More information about the dataset can be found in UCI machine learning repository:
     https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset
 
-    Acknowledgement: Fanaee-T, Hadi, and Gama, Joao, 'Event labeling combining ensemble detectors 
+    Acknowledgement: Fanaee-T, Hadi, and Gama, Joao, 'Event labeling combining ensemble detectors
     and background knowledge', Progress in Artificial Intelligence (2013): pp. 1-15, Springer Berlin Heidelberg
     """
     try:
@@ -43,20 +44,20 @@ def download_data(destination_path: Text) -> NoReturn:
         response = requests.get(DATASET_URL)
         response.raise_for_status()
         content = response.content
-        
+
         with zipfile.ZipFile(io.BytesIO(content)) as archive:
             raw_data = pd.read_csv(
-                archive.open("hour.csv"), 
-                header=0, 
-                sep=',', 
+                archive.open("hour.csv"),
+                header=0,
+                sep=',',
                 parse_dates=['dteday']
             )
-            
+
         raw_data.index = raw_data.apply(
             lambda row: datetime.datetime.combine(
-                row.dteday.date(), 
+                row.dteday.date(),
                 datetime.time(row.hr)
-            ), 
+            ),
             axis=1
         )
 
@@ -64,11 +65,11 @@ def download_data(destination_path: Text) -> NoReturn:
         Path(destination_path).parent.mkdir(parents=True, exist_ok=True)
         raw_data.to_csv(destination_path, index=False)
         logger.info(f"Data successfully downloaded to: {destination_path}")
-        
+
     except RequestException as e:
         logger.error(f"Failed to download data: {str(e)}")
         raise
-    except IOError as e:
+    except OSError as e:
         logger.error(f"Failed to save data: {str(e)}")
         raise
 
