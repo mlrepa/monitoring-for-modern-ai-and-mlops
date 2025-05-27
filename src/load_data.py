@@ -22,7 +22,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def download_data(destination_path: str) -> NoReturn:
+def download_data(destination_path: str) -> None:
     """
     Download the Bike Sharing dataset from UCI machine learning repository.
 
@@ -31,7 +31,7 @@ def download_data(destination_path: str) -> NoReturn:
 
     Raises:
         RequestException: If the download fails
-        IOError: If there are issues with file operations
+        OSError: If there are issues with file operations
 
     More information about the dataset can be found in UCI machine learning repository:
     https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset
