@@ -2,7 +2,7 @@
 
 # 🚀 Tutorial: Monitoring for Modern AI and MLOps
 
-## 👀 Overview
+## 👀 Description
 
 🎓 **What is this?** Welcome to "Comprehensive ML Monitoring for Modern AI and MLOps." This tutorial is your guide to navigating the critical world of monitoring ML models and data. We'll explore key concepts and introduce popular open-source tools: **Evidently AI**, **MLflow**, and **Grafana**.
 
@@ -17,47 +17,49 @@
 
 🔍 **How is it structured?** Through clear, step-by-step instructions with illustrative code examples (provided in accompanying notebooks) in Markdown format.
 
-⏱️ **How much time will it take?** Approximately **60-90 minutes** to cover the concepts and tool introductions, with additional time if you run all code examples thoroughly.
+⏱️ **How much time will it take?** Approximately **45-60 minutes** to cover the concepts and tool introductions, with additional time if you run all code examples thoroughly.
 
 ---
 
 ## 📖 Table of Contents
 
-<!-- 1. [🚀 Tutorial: Monitoring for Modern AI and MLOps](#-tutorial-monitoring-for-modern-ai-and-mlops) -->
-   1. [👀 Overview](#-overview)
-   2. [📖 Table of Contents](#-table-of-contents)
-   3. [⚙️ Prerequisites \& Installation](#️-prerequisites--installation)
-   4. [🛠️ ML Monitoring: Core Tasks and Concepts in MLOps](#️-ml-monitoring-core-tasks-and-concepts-in-mlops)
-      1. [Essential Monitoring Layers in ML Systems (General)](#essential-monitoring-layers-in-ml-systems-general)
-      2. [Monitoring for Modern AI Applications (LLMs, Agents, RAGs)](#monitoring-for-modern-ai-applications-llms-agents-rags)
-      3. [Monitoring Paradigms: Batch vs. Online](#monitoring-paradigms-batch-vs-online)
-      4. [Popular Open-Source Tools for ML Monitoring](#popular-open-source-tools-for-ml-monitoring)
-   5. [🏎️ Evidently AI for ML Models and Data Quality](#️-evidently-ai-for-ml-models-and-data-quality)
-      1. [Step 1: Prepare the data](#step-1-prepare-the-data)
-      2. [Step 2: Create a monitoring report](#step-2-create-a-monitoring-report)
-      3. [Step 3: Visualize or save the report](#step-3-visualize-or-save-the-report)
-   6. [🧠 Evidently AI for LLM-powered Systems and Agents](#-evidently-ai-for-llm-powered-systems-and-agents)
-      1. [Overview of Key Features](#overview-of-key-features)
-      2. [Use Cases and Applications](#use-cases-and-applications)
-      3. [Step 1: Create a free account at Evidently Cloud](#step-1-create-a-free-account-at-evidently-cloud)
-      4. [Step 2: Create a Project "RAG Evaluation"](#step-2-create-a-project-rag-evaluation)
-      5. [Step 3: Run the RAG Evaluation example](#step-3-run-the-rag-evaluation-example)
-   7. [🤖 Tracing and Evaluating AI Agents with MLflow](#-tracing-and-evaluating-ai-agents-with-mlflow)
-      1. [Step 1: Gaining Visibility with Autologging](#step-1-gaining-visibility-with-autologging)
-      2. [Step 2: Tracking Metrics and Artifacts](#step-2-tracking-metrics-and-artifacts)
-      3. [Step 3: Managing and Comparing Prompts with MLflow Prompt Registry](#step-3-managing-and-comparing-prompts-with-mlflow-prompt-registry)
-      4. [Conclusion](#conclusion)
-      5. [Step 2: Calculate Monitoring Metrics (Using Evidently AI)](#step-2-calculate-monitoring-metrics-using-evidently-ai)
-      6. [Step 3: Prepare the PostgreSQL Monitoring Database](#step-3-prepare-the-postgresql-monitoring-database)
-      7. [Step 4: Log Model Quality Metrics to PostgreSQL](#step-4-log-model-quality-metrics-to-postgresql)
-      8. [Step 5: Explore the Pre-configured Grafana Dashboard](#step-5-explore-the-pre-configured-grafana-dashboard)
-      9. [Step 6: Customize Grafana Panels (Exercise)](#step-6-customize-grafana-panels-exercise)
-   8. [🔗 7 - Additional Resources](#-7---additional-resources)
-   9. [🎉 8 - Next Steps \& Conclusion](#-8---next-steps--conclusion)
+<!-- - [🚀 Tutorial: Monitoring for Modern AI and MLOps](#-tutorial-monitoring-for-modern-ai-and-mlops) -->
+- [👀 Description](#-description)
+- [📖 Table of Contents](#-table-of-contents)
+- [⚙️ 1 - Prerequisites & Installation](#️-1---prerequisites--installation)
+- [🛠️ 2 - ML Monitoring: Core Tasks and Concepts in MLOps](#️-2---ml-monitoring-core-tasks-and-concepts-in-mlops)
+  - [Essential Monitoring Layers in ML Systems (General)](#essential-monitoring-layers-in-ml-systems-general)
+  - [Monitoring for Modern AI Applications (LLMs, Agents, RAGs)](#monitoring-for-modern-ai-applications-llms-agents-rags)
+  - [Monitoring Paradigms: Batch vs. Online](#monitoring-paradigms-batch-vs-online)
+  - [Popular Open-Source Tools for ML Monitoring](#popular-open-source-tools-for-ml-monitoring)
+- [🏎️ 3 - Evidently AI for ML Models and Data Quality](#️-3---evidently-ai-for-ml-models-and-data-quality)
+  - [Step 1: Prepare the data](#step-1-prepare-the-data)
+  - [Step 2: Create a monitoring report](#step-2-create-a-monitoring-report)
+  - [Step 3: Visualize or save the report](#step-3-visualize-or-save-the-report)
+- [🧠 4 - Evidently AI for LLM-powered Systems and Agents](#-4---evidently-ai-for-llm-powered-systems-and-agents)
+  - [Overview of Key Features](#overview-of-key-features)
+  - [Use Cases and Applications](#use-cases-and-applications)
+  - [Step 1: Create a free account at Evidently Cloud](#step-1-create-a-free-account-at-evidently-cloud)
+  - [Step 2: Create a Project "RAG Evaluation"](#step-2-create-a-project-rag-evaluation)
+  - [Step 3: Run the RAG Evaluation example](#step-3-run-the-rag-evaluation-example)
+- [🤖 5 - Tracing and Evaluating AI Agents with MLflow](#-5---tracing-and-evaluating-ai-agents-with-mlflow)
+  - [Step 1: Gaining Visibility with Autologging](#step-1-gaining-visibility-with-autologging)
+  - [Step 2: Tracking Metrics and Artifacts](#step-2-tracking-metrics-and-artifacts)
+  - [Step 3: Managing and Comparing Prompts with MLflow Prompt Registry](#step-3-managing-and-comparing-prompts-with-mlflow-prompt-registry)
+  - [Conclusion](#conclusion)
+- [📊 6 - Monitoring AI Systems with Grafana and PostgreSQL](#-6---monitoring-ai-systems-with-grafana-and-postgresql)
+  - [Step 1: Launch Grafana and PostgreSQL](#step-1-launch-grafana-and-postgresql)
+  - [Step 2: Calculate Monitoring Metrics (Using Evidently AI)](#step-2-calculate-monitoring-metrics-using-evidently-ai)
+  - [Step 3: Prepare the PostgreSQL Monitoring Database](#step-3-prepare-the-postgresql-monitoring-database)
+  - [Step 4: Log Model Quality Metrics to PostgreSQL](#step-4-log-model-quality-metrics-to-postgresql)
+  - [Step 5: Explore the Pre-configured Grafana Dashboard](#step-5-explore-the-pre-configured-grafana-dashboard)
+  - [Step 6: Customize Grafana Panels (Exercise)](#step-6-customize-grafana-panels-exercise)
+- [🔗 7 - Additional Resources](#-7---additional-resources)
+- [🎉 8 - Next Steps & Conclusion](#-8---next-steps--conclusion)
 
 ---
 
-## ⚙️ Prerequisites & Installation
+## ⚙️ 1 - Prerequisites & Installation
 
 Before you start with ML monitoring, make sure your development environment is ready with Python, the necessary tools, and the project code.
 
@@ -87,7 +89,7 @@ Once you have completed the setup steps in the `README.md`, your environment wil
 
 ---
 
-## 🛠️ ML Monitoring: Core Tasks and Concepts in MLOps
+## 🛠️ 2 - ML Monitoring: Core Tasks and Concepts in MLOps
 
 Effective ML monitoring is a cornerstone of robust MLOps practices, ensuring models perform reliably and deliver value over time. It's the continuous process of observing, tracking, and analyzing the performance, behavior, and data of ML systems in production.
 
@@ -95,23 +97,23 @@ Effective ML monitoring is a cornerstone of robust MLOps practices, ensuring mod
 
 Monitoring an ML system involves observing several interconnected layers, crucial for any type of ML model:
 
-1.  **🖥️ System Health & Performance:**
-    *   *Focus:* Backend infrastructure, API responsiveness.
-    *   *Metrics:* Prediction service latency, throughput, error rates, uptime, resource (CPU/memory/GPU) usage.
-2.  **💾 Data Integrity & Quality:**
-    *   *Focus:* Validity and statistical properties of input data for inference and retraining.
-    *   *Key Concerns:* **Data Drift** (changes in feature distributions), schema violations, missing values, outliers.
-    *   *MLOps Link:* Data issues often trigger alerts for data pipeline reviews or retraining. Feature Stores can help maintain consistency.
-3.  **🧠 ML Model Performance:**
-    *   *Focus:* The model's predictive power and behavior in production.
-    *   *Key Concerns:* **Prediction Drift** (changes in output distribution), **Concept Drift** (changes in feature-target relationships), degradation of accuracy metrics (e.g., F1, MAE), model staleness, fairness, and bias.
-    *   *MLOps Link:* Performance drops often initiate automated retraining workflows or investigation into data changes.
-4.  **📈 Business or Product KPIs:**
-    *   *Focus:* The model's impact on overarching business objectives.
-    *   *Metrics:* Click-through rates, conversion, revenue impact, user engagement, operational efficiency gains.
-    *   *MLOps Link:* Demonstrates the ROI of ML initiatives and guides strategic decisions.
+1. **🖥️ System Health & Performance:**
+    - *Focus:* Backend infrastructure, API responsiveness.
+    - *Metrics:* Prediction service latency, throughput, error rates, uptime, resource (CPU/memory/GPU) usage.
+2. **💾 Data Integrity & Quality:**
+    - *Focus:* Validity and statistical properties of input data for inference and retraining.
+    - *Key Concerns:* **Data Drift** (changes in feature distributions), schema violations, missing values, outliers.
+    - *MLOps Link:* Data issues often trigger alerts for data pipeline reviews or retraining. Feature Stores can help maintain consistency.
+3. **🧠 ML Model Performance:**
+    - *Focus:* The model's predictive power and behavior in production.
+    - *Key Concerns:* **Prediction Drift** (changes in output distribution), **Concept Drift** (changes in feature-target relationships), degradation of accuracy metrics (e.g., F1, MAE), model staleness, fairness, and bias.
+    - *MLOps Link:* Performance drops often initiate automated retraining workflows or investigation into data changes.
+4. **📈 Business or Product KPIs:**
+    - *Focus:* The model's impact on overarching business objectives.
+    - *Metrics:* Click-through rates, conversion, revenue impact, user engagement, operational efficiency gains.
+    - *MLOps Link:* Demonstrates the ROI of ML initiatives and guides strategic decisions.
 
-<img src="static/images/Untitled%201.png" width="800" alt="Pyramid of ML Monitoring Layers: System Health, Data Quality, Model Performance, Business KPIs">
+<img src="static/images/monitoring-pyramid.png" width="800" alt="Pyramid of ML Monitoring Layers: System Health, Data Quality, Model Performance, Business KPIs">
 
 >*Source: [Evidently AI Blog - ML Monitoring Metrics](https://www.evidentlyai.com/blog/ml-monitoring-metrics)*
 
@@ -121,30 +123,28 @@ These layers are not isolated. For example, a drop in a business KPI (Layer 4) m
 
 While the layers above apply to all ML, "Modern AI" applications like Large Language Models (LLMs), Autonomous Agents, and Retrieval-Augmented Generation (RAG) systems introduce specific monitoring challenges and metrics due to their complexity, non-deterministic nature, and handling of unstructured data.
 
-*   **Data Integrity & Quality:** Beyond tabular feature drift, monitoring involves:
-    *   **Prompt/Query Characteristics:** Drift in prompt length, style, complexity, or topics.
-    *   **Bias Detection:** Identifying potential biases in input prompts or external data sources.
-    *   **Context Relevance (RAG):** Ensuring retrieved documents are relevant, fresh, and high-quality.
-    *   **Unstructured Data Issues:** Monitoring quality of text data, documents, or other unstructured inputs. This often involves analyzing text properties or embeddings.
-*   **AI Model Performance:** Traditional metrics are often insufficient. Key concerns and metrics include:
-    *   **Generation Quality:** Fluency, coherence, factual consistency (especially for RAG), toxicity, style drift.
-    *   **Hallucination Rate:** Tracking how often the model generates factually incorrect or nonsensical information.
-    *   **Task Success (Agents):** Measuring if the agent successfully completes multi-step instructions.
-    *   **Efficiency & Cost:** Monitoring token usage, API call volume, and computational costs.
-    *   **Bias in Outputs:** Detecting if generated text or agent actions exhibit unfair biases.
-    *   **Evaluation:** Often relies on subjective human evaluation, LLM-as-a-judge techniques, or specialized benchmarks. Quantitative metrics like Perplexity, BLEU, ROUGE, and specialized RAG metrics (Context Relevance, Groundedness, Answer Relevance) are also used.
-*   **ML Observability:** Gaining insight into the step-by-step execution of Agents or the retrieval and generation process in RAG is crucial for debugging and understanding behavior. Tracing the flow of data and control through complex pipelines is key.
+- **Data Integrity & Quality:** Beyond tabular feature drift, monitoring involves:
+  - **Prompt/Query Characteristics:** Drift in prompt length, style, complexity, or topics.
+  - **Bias Detection:** Identifying potential biases in input prompts or external data sources.
+  - **Context Relevance (RAG):** Ensuring retrieved documents are relevant, fresh, and high-quality.
+  - **Unstructured Data Issues:** Monitoring quality of text data, documents, or other unstructured inputs. This often involves analyzing text properties or embeddings.
+- **AI Model Performance:** Traditional metrics are often insufficient. Key concerns and metrics include:
+  - **Generation Quality:** Fluency, coherence, factual consistency (especially for RAG), toxicity, style drift.
+  - **Hallucination Rate:** Tracking how often the model generates factually incorrect or nonsensical information.
+  - **Task Success (Agents):** Measuring if the agent successfully completes multi-step instructions.
+  - **Efficiency & Cost:** Monitoring token usage, API call volume, and computational costs.
+  - **Bias in Outputs:** Detecting if generated text or agent actions exhibit unfair biases.
+  - **Evaluation:** Often relies on subjective human evaluation, LLM-as-a-judge techniques, or specialized benchmarks. Quantitative metrics like Perplexity, BLEU, ROUGE, and specialized RAG metrics (Context Relevance, Groundedness, Answer Relevance) are also used.
+- **ML Observability:** Gaining insight into the step-by-step execution of Agents or the retrieval and generation process in RAG is crucial for debugging and understanding behavior. Tracing the flow of data and control through complex pipelines is key.
 
 ### Monitoring Paradigms: Batch vs. Online
 
 ML monitoring can be implemented using different paradigms depending on the application's needs and the availability of data/labels:
 
-*   **Batch Monitoring:** This is suitable for systems where predictions are generated in batches (e.g., daily reports, weekly recommendations) or when ground truth labels are available with a delay. Monitoring checks are run periodically on collected data chunks. This approach is versatile and often simpler to implement.
-*   **Online (Real-time) Monitoring:** This is necessary for low-latency, real-time prediction services (e.g., fraud detection, personalized recommendations). Metrics are computed continuously or near real-time from live request/response data streams. This requires more sophisticated infrastructure for data ingestion and processing.
+- **Batch Monitoring:** This is suitable for systems where predictions are generated in batches (e.g., daily reports, weekly recommendations) or when ground truth labels are available with a delay. Monitoring checks are run periodically on collected data chunks. This approach is versatile and often simpler to implement.
+- **Online (Real-time) Monitoring:** This is necessary for low-latency, real-time prediction services (e.g., fraud detection, personalized recommendations). Metrics are computed continuously or near real-time from live request/response data streams. This requires more sophisticated infrastructure for data ingestion and processing.
 
 Understanding the appropriate paradigm is crucial for designing the monitoring system.
-
-Okay, I'll fix the formatting to combine all rows into a single table and correct the "Covered Here?" status for Great Expectations.
 
 ### Popular Open-Source Tools for ML Monitoring
 
@@ -156,15 +156,15 @@ Here's an overview of popular tools, including those covered in this tutorial:
 | :--------------------- | :------------------------------------------------ | :-------------------------------------------------------------------- | :------------ |
 | **Evidently AI**       | Data & Model Drift, Performance Reports           | Text & Embedding Drift, LLM Evaluation Metrics (via custom). Visual reports. | **Yes**       |
 | **Grafana**            | Time-Series Visualization & Dashboarding          | Visualize *any* ML metric over time (Drift, Performance, Cost, etc.)    | **Yes**       |
-| **MLflow**             | ML Lifecycle (Tracking, Logging, Registry)        | Log monitoring results (reports, metrics), model artifacts. Historical view. | No      |
+| **MLflow**             | ML Lifecycle (Tracking, Logging, Registry)        | Log monitoring results (reports, metrics), model artifacts. Historical view. | **Yes**       |
 | **whylogs**            | Data Profiling & Statistical Monitoring           | Profile Text/Embeddings, generate statistical summaries, detect drift. | No            |
 | **Phoenix (by Arize)** | LLM Application Observability & Evaluation        | RAG/Agent tracing, LLM generation evaluation (factuality, etc.). UI for analysis. | No            |
 | **OpenTelemetry**      | Application Instrumentation & Tracing             | Instrumental for tracing multi-step Agent/RAG pipeline execution.   | No            |
-| **Great Expectations** | Data Validation & Quality Assertions ("Expectations") | Input/Output Schema validation, basic text properties. Batch checks.    | **Yes**       |
+| **Great Expectations** | Data Validation & Quality Assertions ("Expectations") | Input/Output Schema validation, basic text properties. Batch checks.    | No            |
 
 ---
 
-## 🏎️ Evidently AI for ML Models and Data Quality
+## 🏎️ 3 - Evidently AI for ML Models and Data Quality
 
 **Evidently AI** is a tool designed to calculate a wide array of metrics for evaluating your ML models and data quality. It presents these insights in interactive HTML reports or JSON snapshots, which are invaluable for debugging, validation, and crucial for ongoing monitoring. Evidently supports various data types, including tabular data, text, and embeddings.
 
@@ -172,21 +172,19 @@ Here's an overview of popular tools, including those covered in this tutorial:
 
 ML monitoring within a ML model lifecycle (or ML pipeline) typically involves distinct stages:
 
-*   **T - 1 (Training):** The model is trained or updated using historical data (Reference Data). This process can occur daily, weekly, or on another defined schedule.
-*   **T = 0 (Prediction):** The trained model is used to make predictions on the most recent data (Current Data).
-*   **T + 1 (Monitoring):** After predictions are made (and sometimes when actual outcomes or Ground Truth Data become available), you monitor the model's performance and the data's characteristics on this new data, often by comparing it back to the Reference Data.
+- **T - 1 (Training):** The model is trained or updated using historical data (Reference Data). This process can occur daily, weekly, or on another defined schedule.
+- **T = 0 (Prediction):** The trained model is used to make predictions on the most recent data (Current Data).
+- **T + 1 (Monitoring):** After predictions are made (and sometimes when actual outcomes or Ground Truth Data become available), you monitor the model's performance and the data's characteristics on this new data, often by comparing it back to the Reference Data.
 
 <img src="static/images/Untitled.png" width="800" alt="ML Pipeline Stages: Training, Prediction, Monitoring">
 
 In the context of monitoring these ML pipelines, the key objectives include:
 
-1.  **Monitor Model Performance:** Evaluate how well the model is performing on new data over time. This involves checking stability and accuracy using appropriate metrics (if ground truth is available).
-2.  **Monitor Data Quality & Drift:** Track changes in the characteristics of the input data, such as shifts in feature distributions, missing values, or new categories. Data drift can silently degrade model performance.
-3.  **Monitor Prediction Drift:** Analyze changes in the distribution of the model's outputs or predictions over time. This can signal potential issues even before you have ground truth data to measure performance directly.
+1. **Monitor Model Performance:** Evaluate how well the model is performing on new data over time. This involves checking stability and accuracy using appropriate metrics (if ground truth is available).
+2. **Monitor Data Quality & Drift:** Track changes in the characteristics of the input data, such as shifts in feature distributions, missing values, or new categories. Data drift can silently degrade model performance.
+3. **Monitor Prediction Drift:** Analyze changes in the distribution of the model's outputs or predictions over time. This can signal potential issues even before you have ground truth data to measure performance directly.
 
 Evidently AI provides the tools and metrics necessary to perform these monitoring tasks effectively. Its core workflow involves comparing your "Current Data" (from the T=0 prediction step) and optionally "Ground Truth" (from T+1) against your "Reference Data" (from the T-1 training step).
-
-
 
 ### Step 1: Prepare the data
 
@@ -196,8 +194,8 @@ Let's begin with a practical example using Evidently AI to monitor a dataset.
 
 In most cases, Evidently uses two datasets (`reference` and `current`) to calculate metrics and generate reports:
 
-*   The **`reference`** dataset is the benchmark or baseline data. This typically consists of data used for model training or a sample from historical *production* data.
-*   The **`current`** dataset is the recent or ongoing *production* data that you want to compare against the reference.
+- The **`reference`** dataset is the benchmark or baseline data. This typically consists of data used for model training or a sample from historical *production* data.
+- The **`current`** dataset is the recent or ongoing *production* data that you want to compare against the reference.
 
 <img src="static/images/Untitled%205.png" width="800" alt="Monitoring data">
 
@@ -218,7 +216,7 @@ my_eval = report.run(eval_data_1, eval_data_2)
 
 You can visualize the report in Evidently Cloud or inside the notebook.
 
-<img src="static/images/Untitled%208.png" width="800" alt="Evidently AI Custom Report showing specific metrics for 'AveRooms'">
+<img src="static/images/Untitled%206.png" width="800" alt="Evidently AI Custom Report showing specific metrics for 'AveRooms'">
 
 You may export the report in HTML or JSON format.
 
@@ -228,51 +226,50 @@ my_eval.save_html('report.html')
 
 ---
 
-## 🧠 Evidently AI for LLM-powered Systems and Agents
+## 🧠 4 - Evidently AI for LLM-powered Systems and Agents
 
 As LLMs power increasingly complex systems and **AI Agents** that perform multi-step tasks and use tools, ensuring their reliability and safety is crucial. Evidently AI provides a dedicated platform to comprehensively test these advanced LLM systems and agents, helping teams build robust and safe AI products.
 
 <img src="https://github.com/evidentlyai/docs/raw/eb1630cdd80d31d55921ff4d34fc7b5e6e9c9f90/images/dashboard_llm_tabs.gif" alt="Evidently AI Dashboard LLM tabs GIF" width="800">
 
-
 ### Overview of Key Features
 
 Evidently AI covers the full testing lifecycle for LLM systems and agents with these core capabilities:
 
-1.  **Automated Evaluations (EVALS):**
-    *   Run structured tests using built-in and custom metrics (factuality, relevance, safety, **agent logic, tool use**).
-    *   Scale grading with LLM-as-a-judge.
-    *   Catch hallucinations, errors, and safety risks early.
+1. **Automated Evaluations (EVALS):**
+    - Run structured tests using built-in and custom metrics (factuality, relevance, safety, **agent logic, tool use**).
+    - Scale grading with LLM-as-a-judge.
+    - Catch hallucinations, errors, and safety risks early.
 
-2.  **Synthetic Data Generation:**
-    *   Generate realistic test cases, including **complex multi-turn interactions for agents**.
-    *   Test edge cases and **adversarial attacks specific to agents** (e.g., prompt injection via tools).
-    *   Adapt tests as user behavior and risks evolve.
+2. **Synthetic Data Generation:**
+    - Generate realistic test cases, including **complex multi-turn interactions for agents**.
+    - Test edge cases and **adversarial attacks specific to agents** (e.g., prompt injection via tools).
+    - Adapt tests as user behavior and risks evolve.
 
-3.  **Test Suite Management (TEST):**
-    *   Organize and version test suites for different models, prompts, and **agent workflows**.
-    *   Collaborate with experts on test case definition.
-    *   Catch regressions automatically in your pipeline.
+3. **Test Suite Management (TEST):**
+    - Organize and version test suites for different models, prompts, and **agent workflows**.
+    - Collaborate with experts on test case definition.
+    - Catch regressions automatically in your pipeline.
 
-4.  **Comprehensive Reports:**
-    *   Get clear insights into where the system or **agent** fails.
-    *   Compare different versions side-by-side.
-    *   Drill into specific failures (**including agent step-by-step analysis**).
-    *   Prioritize fixes based on failure patterns.
+4. **Comprehensive Reports:**
+    - Get clear insights into where the system or **agent** fails.
+    - Compare different versions side-by-side.
+    - Drill into specific failures (**including agent step-by-step analysis**).
+    - Prioritize fixes based on failure patterns.
 
-5.  **Continuous Monitoring:**
-    *   Track performance in production post-launch.
-    *   Validate new releases and updates with automated tests.
-    *   Identify emerging risks and **shifts in agent behavior** with live data.
+5. **Continuous Monitoring:**
+    - Track performance in production post-launch.
+    - Validate new releases and updates with automated tests.
+    - Identify emerging risks and **shifts in agent behavior** with live data.
 
 ### Use Cases and Applications
 
 Evidently AI helps you focus testing on critical risks and workflows:
 
-*   **AI Agent Testing:** Directly test the reliability and effectiveness of **multi-step workflows, reasoning, and tool use** in agents.
-*   **Adversarial Testing:** Evaluate system and agent resilience against jailbreaks, PII leaks, and harmful content generation.
-*   **RAG Evaluation:** Test hallucination and retrieval failures, especially for RAG components used by agents.
-*   **ML System Monitoring:** Monitor traditional ML components interacting with or orchestrated by your agents.
+- **AI Agent Testing:** Directly test the reliability and effectiveness of **multi-step workflows, reasoning, and tool use** in agents.
+- **Adversarial Testing:** Evaluate system and agent resilience against jailbreaks, PII leaks, and harmful content generation.
+- **RAG Evaluation:** Test hallucination and retrieval failures, especially for RAG components used by agents.
+- **ML System Monitoring:** Monitor traditional ML components interacting with or orchestrated by your agents.
 
 Using Evidently AI provides the confidence, safety assurance, and debug insights needed for complex LLM-powered systems and AI Agents.
 
@@ -284,13 +281,16 @@ For more details, see [Evidently Cloud Documentation](https://docs.evidentlyai.c
 
 <img src="static/images/evidently-create-project.png" width="800" alt="Grafana Welcome Login Screen">
 
+To continue the example, you also need to get an Access Tokens. You can get them from the [Evidently Cloud Documentation](https://docs.evidentlyai.com/docs/setup/cloud).
+<img src="static/images/evidently-token.png" width="800" alt="Evidently Cloud API and Access Tokens">
 
 ### Step 3: Run the RAG Evaluation example
 
 > 💡 **Open the example notebook:** `notebooks/2-evidenlty-rag-metrics.ipynb`
 
+---
 
-## 🤖 Tracing and Evaluating AI Agents with MLflow
+## 🤖 5 - Tracing and Evaluating AI Agents with MLflow
 
 Developing AI Agents that perform multi-step tasks, utilize tools, and interact with external systems presents significant challenges. Unlike traditional software, their execution can feel like a "black box" – opaque, hard to debug, and difficult to compare across iterations. MLflow provides powerful capabilities to bring structure, observability, and rigorous evaluation to the agent development lifecycle.
 
@@ -298,11 +298,11 @@ Developing AI Agents that perform multi-step tasks, utilize tools, and interact 
 
 The scenario involves a CrewAI system designed to research AI/ML tools. We'll see how MLflow tackles common agent development problems:
 
-*   **Black Box Execution:** Understanding the step-by-step process and reasoning.
-*   **Comparing Changes:** Reliably evaluating the impact of prompt or configuration tweaks.
-*   **Debugging Failures:** Pinpointing *why* an agent failed and what happened before the error.
-*   **Performance & Cost:** Tracking execution time, token usage, and associated costs.
-*   **Output Quality:** Systematically evaluating the quality of the agent's final output.
+- **Black Box Execution:** Understanding the step-by-step process and reasoning.
+- **Comparing Changes:** Reliably evaluating the impact of prompt or configuration tweaks.
+- **Debugging Failures:** Pinpointing *why* an agent failed and what happened before the error.
+- **Performance & Cost:** Tracking execution time, token usage, and associated costs.
+- **Output Quality:** Systematically evaluating the quality of the agent's final output.
 
 Let's explore how MLflow features address these issues, following the pattern of the example notebook.
 
@@ -332,9 +332,9 @@ By simply adding `mlflow.crewai.autolog()`, MLflow will automatically record inf
 
 To go beyond simple tracing and enable quantitative comparison and debugging, you need to explicitly log key data points and outputs:
 
-*   **Parameters:** Log the configuration used for the run (e.g., the task description, the existing tech stack, LLM parameters).
-*   **Metrics:** Track quantitative measures like execution time, the number of tokens used (both prompt and completion), and estimated cost. 
-*   **Artifacts:** Save the outputs of the agent's work, such as generated reports, analysis files (e.g., JSON outputs from intermediate tasks).
+- **Parameters:** Log the configuration used for the run (e.g., the task description, the existing tech stack, LLM parameters).
+- **Metrics:** Track quantitative measures like execution time, the number of tokens used (both prompt and completion), and estimated cost.
+- **Artifacts:** Save the outputs of the agent's work, such as generated reports, analysis files (e.g., JSON outputs from intermediate tasks).
 
 Modify your agent execution logic to wrap the run in an `mlflow.start_run()` block and use `mlflow.log_param()`, `mlflow.log_metrics()`, and `mlflow.log_artifact()`.
 
@@ -407,26 +407,25 @@ loaded_prompt = mlflow.load_prompt("create-report-prompt") # Loads latest versio
 ```
 
 Using the Prompt Registry:
-*   Provides version control for prompts.
-*   Allows you to easily load specific prompt versions in your code.
-*   Crucially, MLflow automatically logs which version of a registered prompt was used in an MLflow run when you use `mlflow.load_prompt`. This creates a direct link between prompt versions and run results in the UI.
-
+- Provides version control for prompts.
+- Allows you to easily load specific prompt versions in your code.
+- Crucially, MLflow automatically logs which version of a registered prompt was used in an MLflow run when you use `mlflow.load_prompt`. This creates a direct link between prompt versions and run results in the UI.
 
 ### Conclusion
 
 Integrating MLflow into your AI Agent development process, as demonstrated by the CrewAI example, transforms it from a potentially chaotic "black box" into a structured engineering workflow. You gain:
 
-*   **Traceability:** Understand agent execution and LLM calls.
-*   **Reproducibility:** Capture configurations and prompt versions precisely.
-*   **Comparison:** Systematically evaluate the impact of changes on performance, cost, and quality.
-*   **Debugging:** Quickly diagnose failures using logged information and artifacts.
-*   **Evaluation:** Automate quality assessment using methods like LLM-as-a-judge.
+- **Traceability:** Understand agent execution and LLM calls.
+- **Reproducibility:** Capture configurations and prompt versions precisely.
+- **Comparison:** Systematically evaluate the impact of changes on performance, cost, and quality.
+- **Debugging:** Quickly diagnose failures using logged information and artifacts.
+- **Evaluation:** Automate quality assessment using methods like LLM-as-a-judge.
 
 By leveraging MLflow tracking, logging, evaluation, and prompt management features, you can iterate faster, debug more effectively, and build more reliable and performant AI agents.
 
---- 
+---
 
-## 📊 Monitoring AI Systems with Grafana and PostgreSQL
+## 📊 6 - Monitoring AI Systems with Grafana and PostgreSQL
 
 > 💡 **Open the example notebook:** `notebooks/3-grafana-getting-started.ipynb`
 
@@ -480,8 +479,8 @@ docker compose up -d
 
 - [Evidently AI Official Documentation](https://docs.evidentlyai.com/)
 - [🧠 LLM Evaluation Course](https://github.com/evidentlyai/community-examples/tree/main/learn)
-  - [Video lectures](https://youtube.com/playlist?list=PL9omX6impEuNTr0KGLChHwhvN-q3ZF12d&feature=shared)
-  - Code examples https://github.com/evidentlyai/community-examples/tree/main/learn 
+  - Video lectures: https://youtube.com/playlist?list=PL9omX6impEuNTr0KGLChHwhvN-q3ZF12d&feature=shared
+  - Code examples: <https://github.com/evidentlyai/community-examples/tree/main/learn>
 - [Grafana Documentation](https://grafana.com/docs/grafana/latest/)
 - [MLflow Documentation](https://mlflow.org/docs/latest/index.html)
 
@@ -489,7 +488,7 @@ docker compose up -d
 
 ## 🎉 8 - Next Steps & Conclusion
 
-Congratulations on completing this tutorial on ML monitoring! You've explored key tools like Evidently AI, Great Expectations, MLflow, and Grafana, vital for robust MLOps. You've learned about different monitoring layers, understood the difference between batch and online monitoring, and seen how to track tabular model performance over time.
+Congratulations on completing this tutorial on ML monitoring! You've explored key tools like Evidently AI, MLflow, and Grafana, vital for robust MLOps. You've learned about different monitoring layers, understood the difference between batch and online monitoring, and seen how to track tabular model performance over time.
 
 **Where to go from here?**
 
