@@ -23,7 +23,6 @@
 
 ## 📖 Table of Contents
 
-<!-- - [🚀 Tutorial: Monitoring for Modern AI and MLOps](#-tutorial-monitoring-for-modern-ai-and-mlops) -->
 - [👀 Description](#-description)
 - [📖 Table of Contents](#-table-of-contents)
 - [⚙️ 1 - Prerequisites & Installation](#️-1---prerequisites--installation)
@@ -80,8 +79,9 @@ Before you start with ML monitoring, make sure your development environment is r
 For detailed, step-by-step instructions on how to:
 
 1. Clone the project repository,
-2. Create a Python virtual environment using `uv`, and
-3. Install all required dependencies,
+2. Create a Python virtual environment using `uv`,
+3. Install all required dependencies, and
+4. Set up the Jupyter kernel for running notebooks with Jupyter Lab,
 
 please refer to the **[👩‍💻 Quick Start: Installation & Setup section in the project's README.md file](README.md#️-quick-start-installation--setup)**.
 
@@ -189,6 +189,12 @@ Evidently AI provides the tools and metrics necessary to perform these monitorin
 ### Step 1: Prepare the data
 
 > 💡 **Open the example notebook:** `notebooks/1-evidently-getting-started.ipynb`
+> 
+> Launch Jupyter Lab if you haven't already:
+> ```bash
+> jupyter lab
+> ```
+> Make sure to select the "ML Monitoring Tutorial" kernel when opening the notebook.
 
 Let's begin with a practical example using Evidently AI to monitor a dataset.
 

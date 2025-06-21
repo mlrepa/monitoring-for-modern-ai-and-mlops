@@ -57,6 +57,23 @@ The tutorial covers:
     uv sync --extra dev
     ```
 
+4. **Set up Jupyter Kernel:**
+
+    Create and register a Jupyter kernel for this project to ensure the notebooks run with the correct environment:
+
+    ```bash
+    # Create a kernel for this project
+    python -m ipykernel install --user --name=ml-monitoring --display-name="ML Monitoring Tutorial"
+    ```
+
+    Now you can run the notebooks with Jupyter Lab:
+
+    ```bash
+    jupyter lab
+    ```
+
+    > 👉 **Important:** When opening notebooks in Jupyter Lab, make sure to select the "ML Monitoring Tutorial" kernel from the kernel dropdown menu to ensure all dependencies are available.
+
 ## Project Structure
 
 ```text
@@ -101,12 +118,13 @@ To follow the tutorial step-by-step:
     Navigate to the Grafana UI on [http://localhost:3000](http://localhost:3000) in your browser. The default credentials are `admin/admin`.
 
 3. **Open `tutorial.md` and run the notebooks in order:**
-    Follow the `tutorial.md` (the main guide for this project) and run the corresponding Jupyter notebooks as indicated in each section:
+    Launch Jupyter Lab and follow the `tutorial.md` (the main guide for this project), running the corresponding Jupyter notebooks as indicated in each section.
+
+    Make sure to select the "ML Monitoring Tutorial" kernel when opening each notebook. The notebooks to follow are:
 
     - `1-evidently-getting-started.ipynb`: Introduction to Evidently AI for traditional ML models and data.
     - `2-evidenlty-rag-metrics.ipynb`: Using Evidently AI for LLM-powered systems and Agents.
-    - `3-grafana-getting-started.ipynb`: Launching Grafana and exploring pre-configured dashboards.
-    - `4-monitor-model-with-grafana.ipynb`: Logging model quality metrics to PostgreSQL and visualizing them in Grafana.
+    - `3-evidently-grafana-ml.ipynb`: Logging model quality metrics to PostgreSQL and visualizing them in Grafana.
 
     > 👉 **Note on MLflow section:** The MLflow section in the `tutorial.md` provides conceptual guidance and code snippets, drawing from an external example for tracing and evaluating AI agents. It does not require a specific notebook from *this* repository to run.
 
